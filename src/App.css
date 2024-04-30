@@ -1,0 +1,17 @@
+.app {
+  text-align: center;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    "panel canvas";
+}
+
+.app-panel {
+  grid-area: "panel";
+}
+
+.app-canvas {
+  grid-area: "canvas";
+}
