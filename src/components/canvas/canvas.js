@@ -1,8 +1,14 @@
 import React from 'react'
 
-const Canvas = () => {
+const Canvas = ({radius, circles}) => {
   return (
-    <div>
+    <div className='temp-canvas-container'>
+      <div className='temp-canvas-value'>
+        Num. Circles: {circles}
+      </div>
+      <div className='temp-canvas-value'>
+        Radius: {radius}
+      </div>
       
     </div>
   )

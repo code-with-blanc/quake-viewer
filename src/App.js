@@ -1,5 +1,6 @@
 import './App.css';
 import Panel from './components/panel';
+import Canvas from './components/canvas';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <Panel />
       </div>
       <div className='app-canvas'>
+        <Canvas />
       </div>
     </div>
   );

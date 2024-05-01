@@ -1,35 +1,54 @@
 import React from 'react';
+import ControlPanel, {
+    Button,
+    Checkbox,
+    Multibox,
+    Select,
+    Text,
+    Color,
+    Range,
+    Interval,
+    Custom,
+  } from 'react-control-panel';
 
 import './panel.scss';
 
-export default function Panel({radius, setRadius, circles, setCircles}) {
-    console.log(radius)
-    return (
-    <div className='panel-container'>
-        <div className='panel-item'>
-            <div className='panel-item-label'>
-                Num. Circles
-            </div>
-            <div className='panel-item-ctl'>
-                <input 
-                    type='number'
-                    value={circles}
-                    onChange={e => setCircles(e.target.value)}
-                />
-            </div>
-        </div>
-        <div className='panel-item'>
-            <div className='panel-item-label'>
-                Radius
-            </div>
-            <div className='panel-item-ctl'>
-                <input 
-                    type='number'
-                    value={radius}
-                    onChange={e => setRadius(e.target.value)}
-                />
-            </div>
-        </div>
-    </div>
-  )
-}
+const initialState = {
+'range slider': 20,
+'stepped slider': 0.6,
+interval: [25, 50],
+text: 'my setting',
+checkbox: true,
+'color rgb': 'rgb(100, 200, 100',
+'color hex': '#30b2ba',
+selection: 'option 1',
+'multiple checkboxes': [true, true],
+};
+  
+const Panel = ({
+  circles, setCircles, radius, setRadius,
+}) => (
+    <ControlPanel
+      theme='dark'
+      // title='Demo Panel'
+      // initialState={initialState}
+      onChange={console.log}
+      className='panel-div'
+      // width={500}
+      // style={{ marginRight: 30 }}
+    >
+      <Range
+        label='Num. Circles' min={0} max={16} step={1}
+        value={circles}
+        onChange={(value) => setCircles(value)}
+      />
+      <Range
+        label='Radius' min={0} max={200} step={1}
+        value={radius}
+        onChange={(value) => setRadius(value)}
+      />
+    </ControlPanel>
+  );
+
+export default Panel;
+
