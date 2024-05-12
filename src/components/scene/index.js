@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import Canvas from './canvas';
+import Scene from './Scene';
 
 const mapStateToProps = (state) => ({
     circles: state.circles.circles,
@@ -8,4 +8,4 @@ const mapStateToProps = (state) => ({
 });
 
 
-export default connect(mapStateToProps, null)(Canvas);
+export default connect(mapStateToProps, null)(Scene);

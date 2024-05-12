@@ -43,7 +43,7 @@ const Panel = ({
         onChange={(value) => setCircles(value)}
       />
       <Range
-        label='Radius' min={0} max={200} step={1}
+        label='Radius' min={0} max={20}
         value={radius}
         onChange={(value) => setRadius(value)}
       />

@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-areas:
-    "panel canvas";
+    "panel scene";
 }
 
 .app-panel {
@@ -13,6 +13,6 @@
   background-color: lightblue;
 }
 
-.app-canvas {
-  grid-area: "canvas";
+.app-scene {
+  grid-area: "scene";
 }

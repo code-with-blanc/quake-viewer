@@ -1,6 +1,6 @@
 import './App.css';
 import Panel from './components/panel';
-import Canvas from './components/canvas';
+import Scene from './components/scene';
 
 function App() {
   return (
@@ -8,8 +8,8 @@ function App() {
       <div className='app-panel'>
         <Panel />
       </div>
-      <div className='app-canvas'>
-        <Canvas />
+      <div className='app-scene'>
+        <Scene />
       </div>
     </div>
   );
