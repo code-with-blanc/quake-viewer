@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import circles from './ducks/circles';
+import quakes from './ducks/quakes';
 
 export default configureStore({
     reducer: {
-        circles: circles
+        quakes: quakes
     }
 });

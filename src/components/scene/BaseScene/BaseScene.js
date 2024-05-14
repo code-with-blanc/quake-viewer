@@ -5,10 +5,10 @@ const BaseScene = () => {
   const gridSize = [10, 10]
   const gridConfig = {
     side: DoubleSide,
-    sectionSize: 100,
+    sectionSize: 1000,
     sectionThickness: 1.5,
     sectionColor: '#4c6a9e',
-    cellSize: 10,
+    cellSize: 100,
     cellThickness: 1,
     cellColor: '#6f6f6f',
     fadeDistance: 5000,
