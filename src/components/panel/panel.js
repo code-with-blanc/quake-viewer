@@ -1,33 +1,26 @@
-import React from 'react';
-import ControlPanel, {
-  Range, Button
-} from 'react-control-panel';
+import React, { useEffect } from 'react';
+
+import { useGetQuakesQuery } from '../../store/api/quakeApi';
+import QuakeList from './quakeList';
 
 import './panel.scss';
 
 const Panel = ({
-  numQuakes, setNumQuakes,
-}) => (
-    <ControlPanel
-      theme='dark'
-      className='panel-div'
-    >
-      <Range
-        label='Num. Quakes' min={0} max={1000} step={1}
-        value={numQuakes}
-        onChange={(value) => setNumQuakes(value)}
-      />
-      <Button
-        label='Re-generate earthquakes DB'
-        action={() => {
-          const currentNumQuakes = numQuakes;
-          setNumQuakes(0);
-          setNumQuakes(currentNumQuakes);
-        }}
-      />
+  setRenderQuakes
+}) => {
+  const queryResult = useGetQuakesQuery();
+  useEffect(() => {
+    if(queryResult.status == 'fulfilled') {
+      setRenderQuakes(queryResult.data);      
+    }
+  }, [queryResult]);
 
-    </ControlPanel>
+  return (
+    <div className='panel-container'>
+      <QuakeList />
+    </div>
   );
+};
 
 export default Panel;
 

@@ -1,18 +1,19 @@
 .app {
-  text-align: center;
+  width: 100vw;
   height: 100vh;
 
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 100%;
+
   grid-template-areas:
     "panel scene";
 }
 
 .app-panel {
-  grid-area: "panel";
-  background-color: lightblue;
+  grid-area: panel;
 }
 
 .app-scene {
-  grid-area: "scene";
+  grid-area: scene;
 }

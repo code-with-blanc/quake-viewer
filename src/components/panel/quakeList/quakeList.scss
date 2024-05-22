@@ -1,0 +1,37 @@
+.quake-list {
+    &-scrollable-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: auto;
+
+        background-color: #333;
+    }
+
+    &-item {
+        color: white;
+        border: 1px solid white;
+        padding: 6px 6px;
+        display: grid;
+        grid-template-columns: auto 50px;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "location magnitude"
+            "date     magnitude";
+
+        &-location {
+            grid-area: location;
+        }
+    
+        &-date {
+            grid-area: date;
+            font-size: 0.8em;
+        }
+    
+        &-magnitude {
+            font-size: 2em;
+            grid-area: magnitude;
+        }    
+    }
+
+}

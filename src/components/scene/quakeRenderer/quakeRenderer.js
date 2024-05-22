@@ -2,8 +2,7 @@ import { Lut } from "three/examples/jsm/Addons.js";
 
 const quakeLut = new Lut('rainbow', 100);
 
-const QuakeRenderer = ({quakes}) => {
-  quakes.map((q) => console.log(q.magnitude));
+const QuakeRenderer = ({ quakes }) => {
   return (
     <>
     {
@@ -13,13 +12,11 @@ const QuakeRenderer = ({quakes}) => {
   );
 }
 
-const QuakeSphere = ({quake}) => {
-  const radius = ((quake.magnitude+1)**1.5);
-  const pos_y = -quake.depth * 50;
-  const color = quakeLut.getColor(quake.magnitude/4);
+const QuakeSphere = ({ quake }) => {
+  const color = quakeLut.getColor(quake.magnitude/5);
   return (
-    <mesh position={[quake.pos_x, pos_y, quake.pos_z]}>
-      <sphereGeometry args={[radius]}/>
+    <mesh position={[quake.pos_x, quake.pos_y, quake.pos_z]}>
+      <sphereGeometry args={[quake.radius]}/>
       <meshStandardMaterial
         args={[{
           emissive: color,
