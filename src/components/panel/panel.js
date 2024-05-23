@@ -1,25 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react'
 
-import { useGetQuakesQuery } from '../../store/api/quakeApi';
-import QuakeList from './quakeList';
+import QuakeList from './quakeList'
+import Controls from './controls'
 
 import './panel.scss';
 
-const Panel = ({
-  setRenderQuakes
-}) => {
-  const queryResult = useGetQuakesQuery();
-  useEffect(() => {
-    if(queryResult.status == 'fulfilled') {
-      setRenderQuakes(queryResult.data);      
-    }
-  }, [queryResult]);
-
-  return (
-    <div className='panel-container'>
-      <QuakeList />
-    </div>
-  );
+const Panel = () => {
+    return (
+        <div className='panel-container'>
+            <Controls />
+            <QuakeList />
+        </div>
+    );
 };
 
 export default Panel;

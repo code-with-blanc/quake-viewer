@@ -1,13 +1,10 @@
-import { useGetQuakesQuery } from "../../../store/api/quakeApi";
-
 import "./quakeList.scss";
 
 const QuakeList = ({ quakes }) => {
-    const queryResult = useGetQuakesQuery();
     return (
         <div className="quake-list-scrollable-container">
             <div className="quake-list-items-container">
-                {(queryResult?.data || []).map(q => (<QuakeItem quake={q}/>))}
+                {(quakes).map(q => (<QuakeItem key={q.id} quake={q}/>))}
             </div>
         </div>
     )
@@ -26,8 +23,3 @@ const QuakeItem = ({ quake }) => {
 }
 
 export default QuakeList;
-
-// terapia terça 10h
-// abril - 2
-// maio - 1
-// 

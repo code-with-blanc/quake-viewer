@@ -1,12 +1,19 @@
 import { Lut } from "three/examples/jsm/Addons.js";
+import { selectQuakesForRendering } from "./selectForRendering";
+import { useMemo } from "react";
 
 const quakeLut = new Lut('rainbow', 100);
 
 const QuakeRenderer = ({ quakes }) => {
+  const memoQuakes = useMemo(
+    () => (selectQuakesForRendering(quakes)), 
+    [quakes]
+  )
+
   return (
     <>
     {
-      quakes.map((q) => (<QuakeSphere quake={q} />))
+      memoQuakes.map((q) => (<QuakeSphere quake={q} />))
     }
     </>
   );

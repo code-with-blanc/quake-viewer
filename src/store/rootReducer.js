@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { quakeApi } from './api/quakeApi';
-import render from './ducks/render';
+import controls from './controls/controls';
+import quakes from './quakes/quakes';
 
 export default configureStore({
     reducer: {
-        [quakeApi.reducerPath]: quakeApi.reducer,
-        render: render,
+        quakes: quakes,
+        controls: controls,
     },
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware().concat(quakeApi.middleware)
 });
