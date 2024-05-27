@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/quake-viewer/static/css/main.9daee78c.css",
+    "main.js": "/quake-viewer/static/js/main.1a2ea1fe.js",
+    "static/js/206.ce15f17a.chunk.js": "/quake-viewer/static/js/206.ce15f17a.chunk.js",
+    "index.html": "/quake-viewer/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.9daee78c.css",
+    "static/js/main.1a2ea1fe.js"
+  ]
+}
