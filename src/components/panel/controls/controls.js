@@ -9,7 +9,7 @@ function Controls({
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchQuakes())
-    }, [startDate, endDate])
+    }, [dispatch])
 
     return (
         <div className='panel-controls'>
@@ -35,7 +35,7 @@ const DateInput = ({ onChange, initialValue }) => {
     const debouncedDate = useDebounce(tempDate, 1000);
     useEffect(() => {
         onChange(debouncedDate)
-    }, [debouncedDate])
+    }, [debouncedDate, onChange])
 
     return (
         <input

@@ -157,6 +157,7 @@
     "url": "git+https://github.com/code-with-blanc/quake-viewer.git"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.1.1"
   }
 }

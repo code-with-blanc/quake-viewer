@@ -10,7 +10,7 @@ const initialState = {
 
 export { fetchQuakes };
 
-export const contentSlice = createSlice({
+export const quakesSlice = createSlice({
     name: 'quakes',
     initialState,
     reducers: {},
@@ -35,7 +35,7 @@ export const contentSlice = createSlice({
     },
 })
 
-export default contentSlice.reducer
+export default quakesSlice.reducer
 
 export const selectQuakes = (state) => (state.quakes.quakes)
 
