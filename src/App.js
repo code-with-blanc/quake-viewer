@@ -1,4 +1,5 @@
 import './App.css';
+import Timeline from './components/timeline';
 import Panel from './components/panel';
 import Scene from './components/scene';
 
@@ -11,6 +12,7 @@ function App() {
       <div className='app-scene'>
         <Scene />
       </div>
+      <Timeline />
     </div>
   );
 }

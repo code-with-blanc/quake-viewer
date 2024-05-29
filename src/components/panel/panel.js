@@ -8,7 +8,7 @@ import './panel.scss';
 const Panel = () => {
     return (
         <div className='panel-container'>
-            <Controls />
+            {/* <Controls /> */}
             <QuakeList />
         </div>
     );

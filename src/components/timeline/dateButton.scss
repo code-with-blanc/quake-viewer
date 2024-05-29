@@ -1,0 +1,17 @@
+.timeline-date-button {
+    background: none;
+    cursor: pointer;
+
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    padding: 4px 8px;
+
+    color: darkgray;
+
+    &:hover {
+      border: 1px solid black;
+      color: black;
+      transition: all 200ms;
+    }
+  }
+  
