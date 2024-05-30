@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import controls from './controls/controls';
-import quakes from './quakes/quakes';
+import { quakesSlice } from './quakes/quakes';
+import { renderSlice } from './render/render';
 
 export default configureStore({
     reducer: {
-        quakes: quakes,
-        controls: controls,
+        quakes: quakesSlice.reducer,
+        render: renderSlice.reducer
     },
 });

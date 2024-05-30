@@ -1,15 +1,17 @@
 import { connect } from "react-redux"
-import { setDateRange } from "../../store/controls/controls"
+
+import { setEndDate, setStartDate } from "../../store/quakes/quakes";
 
 import Timeline from "./timeline";
 
 const mapStateToProps = (state) => ({
-    startDate: state.controls.startDate,
-    endDate: state.controls.endDate,
+    startDate: state.quakes.startDate,
+    endDate: state.quakes.endDate,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    setDateRange: (startDate, endDate) => dispatch(setDateRange(startDate, endDate)),
+    setStartDate: (startDate) => dispatch(setStartDate(startDate)),
+    setEndDate: (endDate) => dispatch(setEndDate(endDate)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Timeline)

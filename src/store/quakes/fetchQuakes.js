@@ -1,20 +1,13 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
 import { lightFormat, toDate } from "date-fns"
 import axios from 'axios'
 
-import { selectDateRange } from '../controls/controls'
+const baseUrl = 'https://earthquake.usgs.gov/fdsnws/event/1'
 
-const baseUrl = 'https://earthquake.usgs.gov/fdsnws/event/1/'
-
-export const fetchQuakes = createAsyncThunk(
-    'quakes/fetchQuakes',
-    async (arg, thunkApi) => {
-        const { startDate, endDate } = selectDateRange(thunkApi.getState())
-        const res = await axios(`${baseUrl}${buildQueryArgs(startDate, endDate)}`)
-        const data = await res.data
-        return transformApiResponse(data)
-    }
-)
+export const doFetchQuakes = async (startDate, endDate) => {
+    const res = await axios(`${baseUrl}/query${buildQueryArgs(startDate, endDate)}`)
+    const data = await res.data
+    return transformApiResponse(data)
+}
 
 /// Utility fns
 const transformApiResponse = (response) => (
@@ -41,7 +34,7 @@ const buildQueryArgs = (startDate, endDate) => {
     const endDateStr = lightFormat(endDate, 'yyyy-MM-dd')
 
     return (
-        `query?format=geojson`
+        `?format=geojson`
         + `&starttime=${startDateStr}`
         + `&endtime=${endDateStr}`
         + `&minmagnitude=0`

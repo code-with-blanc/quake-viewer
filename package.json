@@ -84,7 +84,13 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "babelOptions": {
+        "presets": ["@babel/preset-react"]
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -160,6 +166,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-react": "^7.24.6",
     "gh-pages": "^6.1.1"
   }
 }

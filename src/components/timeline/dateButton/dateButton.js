@@ -4,7 +4,6 @@ import ReactDatePicker from 'react-datepicker';
 
 import "react-datepicker/dist/react-datepicker.css";
 
-
 import "./dateButton.scss"
 
 const TimelineDateButton = forwardRef(({ value, onClick }, ref) => (

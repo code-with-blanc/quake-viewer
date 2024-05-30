@@ -1,45 +1,33 @@
-import React, { useState, forwardRef } from 'react'
-import { format } from 'date-fns'
-import ReactDatePicker from 'react-datepicker';
-
-import RangeSlider from 'react-range-slider-input';
-import 'react-range-slider-input/dist/style.css';
-import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css"
 
 import './timeline.scss'
-import { useDispatch, useSelector } from 'react-redux';
-import { selectDateRange } from '../../store/controls/controls';
-import DateButton from './dateButton';
+import DateButton from './dateButton'
+import TimelineSlider from './timelineSlider'
 
 const DateSlider = ({
-  startDate, endDate, setDateRange,
+  startDate, endDate,
+  setStartDate, setEndDate,
 }) => {
   return (
     <div className="timeline-container">
       <div className="timeline-date-start">
         <DateButton
           value={startDate}
-          onChange={(date) => setDateRange(date.getTime(), endDate)}
+          onChange={(date) => setStartDate(date.getTime())}
         />
       </div>
       <div className="timeline-slider" >
-        <RangeSlider
-          min={startDate}
-          max={endDate}
-          value={[startDate, endDate]}
-          onInput={(param) => {
-            console.log(param)
-          }}
-        />
+        <TimelineSlider />
       </div>
       <div className="timeline-date-end">
         <DateButton 
           value={endDate}
-          onChange={(date) => setDateRange(startDate, date.getTime())}
+          onChange={(date) => setEndDate(date.getTime())}
         />
       </div>
     </div>
   )
 }
+
 
 export default DateSlider
