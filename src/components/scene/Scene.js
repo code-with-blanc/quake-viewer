@@ -1,4 +1,4 @@
-import { CameraControls } from '@react-three/drei';
+import { MapControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber'
 import React from 'react'
 
@@ -8,12 +8,11 @@ import QuakeRenderer from './quakeRenderer';
 const Scene = () => {
   return (
     <Canvas
-      camera={{position:[0, 100, 0], far:10_000}}
+      camera={{position:[0, 1000, 0], far:10_000}}
     >
-      <CameraControls />
+      <MapControls />
       <BaseScene />
       <QuakeRenderer />
-
     </Canvas>
   )
 }
