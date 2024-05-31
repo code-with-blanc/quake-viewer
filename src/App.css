@@ -4,10 +4,18 @@
 
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 100%;
+  grid-template-rows: 100vh;
 
   grid-template-areas:
     "panel scene";
+}
+
+.app-info-bar {
+  position: absolute;
+  width: 100vw;
+
+  /* force z-index to put info bar over 3d canvas */
+  z-index: 1000;
 }
 
 .app-panel {

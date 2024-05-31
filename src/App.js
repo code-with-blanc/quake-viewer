@@ -5,6 +5,7 @@ import Scene from './components/scene';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchQuakes } from './store/quakes/quakes';
+import InfoBar from './components/infoBar';
 
 function App() {
   const dispatch = useDispatch()
@@ -13,15 +14,20 @@ function App() {
   })
 
   return (
-    <div className="app">
-      <div className='app-panel'>
-        <Panel />
+    <>
+      <div className='app-info-bar'>
+        <InfoBar />
       </div>
-      <div className='app-scene'>
-        <Scene />
+      <div className="app">
+        <div className='app-panel'>
+          <Panel />
+        </div>
+        <div className='app-scene'>
+          <Scene />
+          <Timeline />
+        </div>
       </div>
-      <Timeline />
-    </div>
+    </>
   );
 }
 
