@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Quake Viewer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A quick Proof-of-Concept app for visualizing earthquake data from the USGS catalogue in 3D
 
-## Available Scripts
+Check out the live demo: https://code-with-blanc.github.io/quake-viewer/
 
-In the project directory, you can run:
+It uses React, Redux and Three.js
 
-### `npm start`
+I may revisit this project in the future as there are so many possible improvements:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Use (or implement!) an API that provides data for M < 4.0 quakes
+- Use a map projection instead of naively using latitude and longitude as xy coordinates
+- Display more detailed earthquake data
+- Make the color coding of earhquakes user-controllable (ex: color by time instead of magnitude)
+- Improve performance when adjusting the timeline slider
+- Show markers for cities and volcanoes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+In coding this project I realized that three.js could have better support for GeoJson data.
+Creating a robust solution and publishing it as a package may be a good idea for when I revisit this project.
 
-### `npm test`
+### The code is not great
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This was a PoC, the point here was not to build an enterprise grade system but to try out some ideas. So... yes, the code has no tests, eslint violations, there are some different react/redux patterns mixed together, etc.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I do hope it is organized and legible enough if anyone is interested.
