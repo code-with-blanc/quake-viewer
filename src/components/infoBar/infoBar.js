@@ -9,7 +9,7 @@ const InfoBar = () => {
 
     return (
         <div className={
-            `info-bar-container 
+            `info-bar-container
             ${open ? '' : 'info-bar-container-closed'}`
         }>
             <div>

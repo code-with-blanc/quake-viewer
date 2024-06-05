@@ -5,13 +5,13 @@ const BaseScene = () => {
   const gridSize = [10, 10]
   const gridConfig = {
     side: DoubleSide,
-    sectionSize: 1000,
-    sectionThickness: 1.5,
+    sectionSize: 100,
+    sectionThickness: 1,
     sectionColor: '#4c6a9e',
-    cellSize: 100,
+    cellSize: 10,
     cellThickness: 1,
     cellColor: '#6f6f6f',
-    fadeDistance: 5000,
+    fadeDistance: 500,
     fadeStrength: 1,
     followCamera: false,
     infiniteGrid: true,

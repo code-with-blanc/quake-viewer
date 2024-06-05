@@ -1,8 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { doFetchIceland } from "./fetchRender";
 
+///// Action Creators
+export const fetchIcelandCoordinates = createAsyncThunk(
+    'render/fetchIcelandCoordinates',
+    async () => { return doFetchIceland() }
+)
+
+//// Reducer
 const initialState = {
     minDate: 0,
     maxDate: Number.MAX_VALUE,
+    icelandCoordinates: []
 }
 
 export const renderSlice = createSlice({
@@ -24,7 +33,18 @@ export const renderSlice = createSlice({
                 state.maxDate = action.payload.maxDate
             }
         ),
-    })
+    }),
+    extraReducers: (builder) => {
+        builder.addCase(fetchIcelandCoordinates.pending, (state) => {
+            state.icelandCoordinates = []
+        })
+        builder.addCase(fetchIcelandCoordinates.fulfilled, (state, action) => {
+            state.icelandCoordinates = action.payload
+        })
+        builder.addCase(fetchIcelandCoordinates.rejected, (state) => {
+            state.icelandCoordinates = []
+        })
+    }
 })
 
 export const {

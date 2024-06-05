@@ -4,7 +4,8 @@ import axios from 'axios'
 const baseUrl = 'https://earthquake.usgs.gov/fdsnws/event/1'
 
 export const doFetchQuakes = async (startDate, endDate) => {
-    const res = await axios(`${baseUrl}/query${buildQueryArgs(startDate, endDate)}`)
+    const res = await axios.get(`${baseUrl}/query${buildQueryArgs(startDate, endDate)}`)
+
     const data = await res.data
     return transformApiResponse(data)
 }
@@ -38,9 +39,9 @@ const buildQueryArgs = (startDate, endDate) => {
         + `&starttime=${startDateStr}`
         + `&endtime=${endDateStr}`
         + `&minmagnitude=0`
-        + `&minlatitude=62`
-        + `&maxlatitude=70`
-        + `&minlongitude=-25`
-        + `&maxlongitude=-11`
+        + `&minlatitude=50`
+        + `&maxlatitude=80`
+        + `&minlongitude=-30`
+        + `&maxlongitude=-5`
     )
 }

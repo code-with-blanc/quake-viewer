@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import { doFetchQuakes } from './fetchQuakes'
 
-// Action Creators
+//// Action Creators
 export const fetchQuakes = createAsyncThunk(
     'quakes/fetchQuakes',
     async (_, thunkApi) => {
@@ -30,14 +30,13 @@ export const setEndDate = (endDate) => (dispatch) => {
     return dispatch(fetchQuakes())
 }
 
-// Reducer
-
+//// Reducer
 const initialState = {
     quakes: [],
     isLoading: false,
     isError: false,
 
-    startDate: Date.parse('2000-01-01 00:01'),
+    startDate: Date.parse('2010-01-01 00:01'),
     endDate: Date.now(),
 }
 
@@ -74,7 +73,6 @@ export const quakesSlice = createSlice({
 
 export default quakesSlice.reducer
 
-// Selectors
-
+//// Selectors
 export const selectQuakes = (state) => (state.quakes.quakes)
 
