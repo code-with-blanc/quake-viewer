@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 
-import { setEndDate, setStartDate } from "../../store/quakes/quakes";
+import { setEndDate, setStartDate } from "../../../store/quakes/quakes";
 
 import Timeline from "./timeline";
 

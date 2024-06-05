@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { doFetchIceland } from "./fetchRender";
+import { doFetchIceland } from "./fetchIceland";
 
 ///// Action Creators
 export const fetchIcelandCoordinates = createAsyncThunk(

@@ -76,3 +76,7 @@ export default quakesSlice.reducer
 //// Selectors
 export const selectQuakes = (state) => (state.quakes.quakes)
 
+export const selectQuakesStatus = (state) => ({
+    isLoading: state.quakes.isLoading,
+    isError: state.quakes.isError
+})

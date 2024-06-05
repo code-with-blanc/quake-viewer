@@ -2,14 +2,13 @@
   position: absolute;
   left: 0; right: 0;
   margin: auto;
-  z-index: 1;
   bottom: 40px;
 
   width: 480px;
-  // height: 60px;
 
   background: #333;
   border: 1px solid black;
+  border-radius: 8px;
 
   display: grid;
   grid-template-columns: 120px auto 120px;
@@ -28,7 +27,7 @@
 
 .timeline-slider {
   grid-area: slider;
-  padding: 16px 60px 0 60px;
+  padding: 16px 60px 4px 60px;
 
   @include flex-center();
 }

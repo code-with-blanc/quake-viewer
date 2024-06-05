@@ -11,7 +11,6 @@ export default function Iceland() {
         dispatch(fetchIcelandCoordinates())
     }, [dispatch])
     const coordinates = useSelector((state) => state.render.icelandCoordinates)
-    console.log({coordinates})
 
     return (
         <>{

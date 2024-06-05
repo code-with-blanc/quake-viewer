@@ -1,5 +1,7 @@
 import RangeSlider from 'react-range-slider-input'
+
 import 'react-range-slider-input/dist/style.css'
+import './timelineSlider.scss'
 
 const TimelineSlider = ({
     startDate, endDate,
@@ -8,6 +10,7 @@ const TimelineSlider = ({
   }) => {  
     return (
       <RangeSlider
+        className="timeline-slider-inner"
         min={startDate}
         max={endDate}
         value={[minRenderDate, maxRenderDate]}

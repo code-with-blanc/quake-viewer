@@ -10,18 +10,32 @@
     "panel scene";
 }
 
-.app-info-bar {
-  position: absolute;
-  width: 100vw;
-
-  /* force z-index to put info bar over 3d canvas */
-  z-index: 1000;
-}
-fo bar
 .app-panel {
   grid-area: panel;
 }
 
-.app-scene {
+.app-scene-container {
   grid-area: scene;
+
+  position: relative;
+}
+
+.app-scene {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.app-scene-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
 }

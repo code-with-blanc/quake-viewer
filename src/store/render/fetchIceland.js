@@ -8,7 +8,6 @@ export const doFetchIceland = async () => {
         const geoJson = await res.data
         return geoJson.features[0].geometry.coordinates
     } catch (e) {
-        console.log(e)
         return []
     }
 }

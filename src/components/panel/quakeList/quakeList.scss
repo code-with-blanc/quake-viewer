@@ -34,4 +34,46 @@
         }    
     }
 
+    &-text-container {
+        height: 100%;
+        background-color: #333;
+        color: white;
+        font-size: 2em;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    &-text-small {
+        font-size: small;
+        padding: 12px 0;
+    }
+
+    &-loading-dots {
+        width: 60px;
+        margin: 20px 0 80px 0;
+
+        aspect-ratio: 2;
+        --_g: no-repeat radial-gradient(
+            circle closest-side,#FFF 80%,#0000
+        );
+        background: 
+          var(--_g) 0%   50%,
+          var(--_g) 50%  50%,
+          var(--_g) 100% 50%;
+        background-size: calc(60%/3) 50%;
+        animation: l3 1.5s infinite linear;    
+    
+        @keyframes l3 {
+            20%{background-position:0%   0%, 50%  50%,100%  50%}
+            40%{background-position:0% 100%, 50%   0%,100%  50%}
+            60%{background-position:0%  50%, 50% 100%,100%   0%}
+            80%{background-position:0%  50%, 50%  50%,100% 100%}
+        }
+    }
+
+    
 }

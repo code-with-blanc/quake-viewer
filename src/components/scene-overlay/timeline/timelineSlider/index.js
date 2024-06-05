@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { setRenderDateRange } from "../../../store/render/render";
+import { setRenderDateRange } from "../../../../store/render/render";
 
 import TimelineSlider from './timelineSlider'
 
