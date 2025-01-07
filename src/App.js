@@ -5,7 +5,8 @@ import { fetchQuakes } from './store/quakes/quakes';
 import Panel from './components/panel';
 import Scene from './components/scene';
 
-import './App.css';
+import './App.scss';
+import './globalStyles.scss';
 import SceneOverlay from './components/scene-overlay';
 
 function App() {

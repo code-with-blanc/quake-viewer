@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+  
+    &::-webkit-scrollbar-track {
+        background: #333;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+        background-color: #fff9;
+        border-radius: 6px;
+        border: solid 2px #333;
+    }
+}
+
+.text-lg { font-size: 2em; }
+.text-sm { font-size: small; }
+
+.flex-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

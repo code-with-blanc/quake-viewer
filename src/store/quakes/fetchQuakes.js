@@ -21,6 +21,7 @@ const transformApiResponse = (response) => (
         place: feature.properties.place,
         status: feature.properties.status,
         time: feature.properties.time,
+        url: feature.properties.url,
     }))
 )
 
