@@ -60,7 +60,7 @@ const QuakeItem = ({ quake }) => {
                     </div>
                 ) : null}
             </div>
-            <div class="quake-list-item-separator" />
+            <div className="quake-list-item-separator" />
         </>
 
 )

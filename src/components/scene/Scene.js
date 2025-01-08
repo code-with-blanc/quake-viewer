@@ -11,7 +11,7 @@ const Scene = () => {
     <Canvas
       camera={{
         position: [-20, 8, -55],
-        far:100,
+        far: 10000,
       }}
     >
       <OrbitControls target={[-22, 0, -63]} />
@@ -21,6 +21,5 @@ const Scene = () => {
     </Canvas>
   )
 }
-
 
 export default Scene

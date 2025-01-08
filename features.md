@@ -5,4 +5,6 @@
 - Improve quake list
 - Whole world
 - Spherical view
-- upgrade to vite or smt
+- upgrade to vite or smth
+- collapsible quake list
+- quake timeline
