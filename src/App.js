@@ -1,40 +1,36 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchQuakes } from './store/quakes/quakes';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchQuakes } from "./store/quakes/quakes";
 
-import Panel from './components/panel';
-import Scene from './components/scene';
+import Panel from "./components/panel";
+import Scene from "./components/scene";
 
-import './App.scss';
-import './globalStyles.scss';
-import SceneOverlay from './components/scene-overlay';
-import SidePaneLayout from './components/scene/layout/sidePane/sidePane';
+import "./globalStyles.scss";
+import SceneOverlay from "./components/scene-overlay";
+import SidePaneLayout from "./components/scene/layout/sidePane/sidePane";
+import OverLayLayout from "./components/scene/layout/overlay/overlay";
 
 function App() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(fetchQuakes())
-  })
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchQuakes());
+    });
 
-  return (
-    <>
-      <div className="app">
-        <SidePaneLayout
-          sidePaneContent={<Panel />}
-          mainContent={
-            <div className='app-scene-container'>
-              <div className='app-scene'>
-                <Scene />
-              </div>
-              <div className='app-scene-overlay'>
-                <SceneOverlay />
-              </div>
+    return (
+        <>
+            <div style={{ width: '100vw', height: '100vh', overflow: 'hidden'}}>
+                <SidePaneLayout
+                    sidePaneContent={<Panel />}
+                    mainContent={
+                        <OverLayLayout
+                            baseContent={<Scene />}
+                            overlayContent={<SceneOverlay />}
+                        />
+                    }
+                />
             </div>
-          }
-        />
-      </div>
-    </>
-  );
+        </>
+    );
 }
 
 export default App;
