@@ -1,0 +1,37 @@
+.layout-side-pane {
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    &--active * {
+        cursor: w-resize !important;
+    }
+}
+
+.side-pane-content {
+    overflow: hidden;
+}
+
+.side-pane-handle {
+    height: 100%;
+    width: 12px;
+    cursor: w-resize;
+
+    --bg-w: 12%;
+    background: var(--color-bg);
+    background: linear-gradient(90deg, 
+        var(--color-bg) calc(50% - var(--bg-w)), 
+        var(--color-off-white) 50%, 
+        var(--color-bg) calc(50% + var(--bg-w))
+    );
+
+    &:hover {
+        --bg-w: 24%;
+    }
+
+}
+
+.side-pane-main-content {
+    width: 100%;
+    height: 100%;
+}

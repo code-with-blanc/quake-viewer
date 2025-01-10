@@ -1,3 +1,5 @@
+@import url('/src/_colors.scss');
+
 * {
     box-sizing: border-box;
 }
@@ -8,13 +10,13 @@ div {
     }
   
     &::-webkit-scrollbar-track {
-        background: #333;
+        background: var(--color-bg);
     }
   
     &::-webkit-scrollbar-thumb {
-        background-color: #fff9;
+        background-color: var(--color-off-white);
         border-radius: 6px;
-        border: solid 2px #333;
+        border: solid 2px var(--color-bg);
     }
 }
 

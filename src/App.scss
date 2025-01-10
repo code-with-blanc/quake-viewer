@@ -1,22 +1,10 @@
 .app {
   width: 100vw;
   height: 100vh;
-
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  grid-template-rows: 100vh;
-
-  grid-template-areas:
-    "panel scene";
-}
-
-.app-panel {
-  grid-area: panel;
 }
 
 .app-scene-container {
-  grid-area: scene;
-
+  height: 100%;
   position: relative;
 }
 
