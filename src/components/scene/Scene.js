@@ -9,6 +9,7 @@ import Iceland from './iceland/iceland';
 const Scene = () => {
   return (
     <Canvas
+      style={{background: '#15151a'}}
       camera={{
         position: [-20, 8, -55],
         far: 10000,

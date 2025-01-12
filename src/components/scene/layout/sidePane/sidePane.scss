@@ -1,34 +1,85 @@
 .layout-side-pane {
-    width: 100%;
     height: 100%;
     display: flex;
 
-    &--active * {
-        cursor: w-resize !important;
+    &--resizing {
+        cursor: w-resize;
     }
+
+    background-color: var(--color-bg);
+}
+
+.side-pane-container {
+    display: flex;
+    position: relative;
+
+    --w-handle: 12px;
 }
 
 .side-pane-content {
-    overflow: hidden;
+    overflow: 'hidden';
+    transition: max-width 500ms;
 }
 
 .side-pane-handle {
     height: 100%;
-    width: 12px;
-    cursor: w-resize;
+    width: var(--w-handle);
 
-    --bg-w: 12%;
-    background: var(--color-bg);
     background: linear-gradient(90deg, 
-        var(--color-bg) calc(50% - var(--bg-w)), 
-        var(--color-off-white) 50%, 
-        var(--color-bg) calc(50% + var(--bg-w))
+        var(--color-bg) calc(50% - 1px), 
+        var(--color-off-white) calc(50%), 
+        var(--color-bg) calc(55% + 1px)
     );
 
     &:hover {
-        --bg-w: 24%;
-    }
+        background: linear-gradient(90deg, 
+            var(--color-bg) calc(50% - 1.5px), 
+            var(--color-off-white-bright) calc(50% - 0.5px), 
+            var(--color-off-white-bright) calc(50% + 0.5px), 
+            var(--color-bg) calc(55% + 1.5px)
+        );
 
+    }
+}
+
+.side-pane-btn {
+    --h-btn: 80px;
+    --w-btn: 32px;
+    position: absolute;
+    z-index: 10;
+    
+    top: calc(50% - var(--h-btn)/2);
+    right: calc(0.5 * (var(--w-handle) - var(--w-btn)));
+    
+    width: calc(var(--w-btn));
+    height: var(--h-btn);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;
+    & div {
+        cursor: pointer;
+        pointer-events: all;
+        width: 80%;
+        height: 66.6%;
+
+        background: var(--color-bg);
+        border: solid 2px var(--color-off-white);
+        border-radius: 12px;
+
+        transition: 100ms;
+
+        color: white;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            transform: scale(1.05);
+            border: solid 2px var(--color-off-white-bright)
+        }
+    }
 }
 
 .side-pane-main-content {
