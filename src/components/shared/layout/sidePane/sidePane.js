@@ -51,7 +51,7 @@ export default function SidePaneLayout({ mainContent, sidePaneContent }) {
                     ref={handleRef}
                     className='side-pane-handle'
                     style={{
-                        margin: open ? '0' : '0 0 0 8px',
+                        margin: open ? '0' : '0 0 0 6px',
                         cursor: open ? 'w-resize' : 'pointer'
                     }}
                     onMouseDown={() => {

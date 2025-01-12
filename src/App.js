@@ -7,8 +7,8 @@ import Scene from "./components/scene";
 
 import "./globalStyles.scss";
 import SceneOverlay from "./components/scene-overlay";
-import SidePaneLayout from "./components/scene/layout/sidePane/sidePane";
-import OverLayLayout from "./components/scene/layout/overlay/overlay";
+import SidePaneLayout from "./components/shared/layout/sidePane/sidePane";
+import OverLayLayout from "./components/shared/layout/overlay/overlay";
 
 function App() {
     const dispatch = useDispatch();
