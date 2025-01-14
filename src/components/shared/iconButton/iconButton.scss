@@ -1,0 +1,32 @@
+.icon-button {
+    display: flex;
+    flex-direction: row-reverse;
+    // align-items: stretch;
+    gap: 8px;
+
+    transition: 300ms;
+
+    --alt-w: 0;
+    &:hover {
+        --alt-w: auto;
+    }
+
+    &-icon {
+        width: 24px;
+        height: 24px;
+    
+        border: solid white 2px;
+        border-radius: 8px;
+    
+        background-color: #333;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;    
+    }
+
+    &-alt {
+        max-width: var(--alt-w);
+    }
+}
