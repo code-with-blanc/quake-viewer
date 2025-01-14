@@ -1,0 +1,38 @@
+.icon-button {
+    display: flex;
+    flex-direction: row-reverse;
+    // align-items: stretch;
+    gap: 8px;
+
+
+    --alt-max-w: 0;
+    --border-color: var(--color-off-white);
+    &:hover {
+        --alt-max-w: 300px;
+        --border-color: var(--color-off-white-bright);
+    }
+
+    &-icon {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    
+        border: solid 1px var(--border-color);
+        border-radius: 8px;
+    
+        background-color: #333;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;    
+    }
+
+    &-alt {
+        transition: 300ms;
+        border: solid lightblue 1px;
+        overflow: hidden;
+        color: white;
+        max-width: var(--alt-max-w);
+    }
+}
