@@ -3,11 +3,10 @@
     flex-direction: row-reverse;
     gap: 8px;
 
-
-    --alt-max-w: 0;
+    --alt-text-opacity: 0;
     --border-color: var(--color-off-white);
     &:hover {
-        --alt-max-w: 300px;
+        --alt-text-opacity: 1;
         --border-color: var(--color-off-white-bright);
     }
 
@@ -19,19 +18,22 @@
         border: solid 1px var(--border-color);
         border-radius: 8px;
     
-        background-color: #333;
+        background-color: var(--color-bg);
         
         display: flex;
         align-items: center;
         justify-content: center;
-        color: white;    
+
+        color: var(--border-color);
     }
 
     &-alt {
-        transition: 300ms;
-        border: solid lightblue 1px;
+        opacity: var(--alt-text-opacity);
+        transition: 500ms;
         overflow: hidden;
-        color: white;
-        max-width: var(--alt-max-w);
+        color: var(--color-off-white-bright);
+
+        display: flex;
+        align-items: center;
     }
 }

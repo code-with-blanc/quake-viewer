@@ -4,18 +4,20 @@ import Timeline from './timeline'
 import IconButton from '../shared/iconButton/iconButton'
 
 import './sceneOverlay.scss'
+import { GITHUB, LINKEDIN_PROFILE } from '../../env'
 
 export default function SceneOverlay() {
   return (
     <div className='scene-overlay-container'>
         <div className='scene-overlay-btns'>
-<<<<<<< HEAD
-           <IconButton />
-           <IconButton alt="github"/>
-=======
-           <IconButton></IconButton>
-           <IconButton></IconButton>
->>>>>>> 85fd8082ba23ca615b05cade5fed6cfa513fac34
+          <IconButton
+            icon="linkedin" alt="Reach me on LinkedIn"
+            onClick={() => window.open(LINKEDIN_PROFILE, '_blank')}
+          />
+          <IconButton 
+            icon="github" alt="Source code"
+            onClick={() => { window.open(GITHUB, '_blank') }}
+          />
         </div>
         <div className='scene-overlay-timeline'>
             <Timeline />
