@@ -6,6 +6,8 @@
     background-color: var(--color-bg);
     color: white;
     
+    user-select: none;
+
     &-error {
         text-align: center;
         gap: 16px;
