@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/quake-viewer/static/css/main.bebf0cf5.css",
-    "main.js": "/quake-viewer/static/js/main.f39ee4c9.js",
-    "static/js/206.5b184f2f.chunk.js": "/quake-viewer/static/js/206.5b184f2f.chunk.js",
+    "main.css": "/quake-viewer/static/css/main.7e9f17d2.css",
+    "main.js": "/quake-viewer/static/js/main.3fb29ff5.js",
+    "static/js/206.16628d77.chunk.js": "/quake-viewer/static/js/206.16628d77.chunk.js",
     "index.html": "/quake-viewer/index.html"
   },
   "entrypoints": [
-    "static/css/main.bebf0cf5.css",
-    "static/js/main.f39ee4c9.js"
+    "static/css/main.7e9f17d2.css",
+    "static/js/main.3fb29ff5.js"
   ]
 }
