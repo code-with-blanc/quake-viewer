@@ -40,9 +40,9 @@ const buildQueryArgs = (startDate, endDate) => {
         + `&starttime=${startDateStr}`
         + `&endtime=${endDateStr}`
         + `&minmagnitude=0`
-        + `&minlatitude=50`
-        + `&maxlatitude=80`
-        + `&minlongitude=-30`
-        + `&maxlongitude=-5`
+        // + `&minlatitude=50`
+        // + `&maxlatitude=80`
+        // + `&minlongitude=-30`
+        // + `&maxlongitude=-5`
     )
 }

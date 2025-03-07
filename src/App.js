@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { fetchQuakes } from "./store/quakes/quakes";
 
 import Panel from "./components/panel";
-import Scene from "./components/scene";
+import Scene from "./scene";
 
 import "./globalStyles.scss";
 import SceneOverlay from "./components/scene-overlay";
