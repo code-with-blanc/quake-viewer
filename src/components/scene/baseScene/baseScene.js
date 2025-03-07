@@ -22,7 +22,7 @@ const BaseScene = () => {
     <>
         <ambientLight intensity={1} />        
         <color attach="background" args={['#15151a']} />
-        <Grid args={gridSize} {...gridConfig} />
+        {/* <Grid args={gridSize} {...gridConfig} /> */}
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
             <GizmoViewport disabled axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']} labelColor="white" />
         </GizmoHelper>

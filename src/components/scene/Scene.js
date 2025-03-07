@@ -5,6 +5,7 @@ import React from 'react'
 import BaseScene from './baseScene';
 import QuakeRenderer from './quakeRenderer';
 import Iceland from './iceland/iceland';
+import { SphereWithLines } from './SphereWithLines/SphereWithLines';
 
 const Scene = () => {
   return (
@@ -15,9 +16,10 @@ const Scene = () => {
         far: 10000,
       }}
     >
-      <OrbitControls target={[-22, 0, -63]} />
+      <SphereWithLines />
+      <OrbitControls target={[0, 0, 0]} minDistance={110}/>
       <BaseScene /> 
-      <Iceland />
+      {/* <Iceland /> */}
       <QuakeRenderer />
     </Canvas>
   )

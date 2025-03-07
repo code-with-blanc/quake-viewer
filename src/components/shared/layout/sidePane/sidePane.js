@@ -13,7 +13,6 @@ export default function SidePaneLayout({ mainContent, sidePaneContent }) {
     const handleRef = useRef()
 
     const onMouseMove = (e) => {
-        console.log(resizing)
         if(resizing) {
             const rect = handleRef?.current?.getBoundingClientRect()
             const x = rect.x + rect.width/2
