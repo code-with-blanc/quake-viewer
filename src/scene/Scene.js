@@ -5,6 +5,7 @@ import React from 'react'
 import { Quakes } from './quakes/quakes';
 import { World } from './world/world';
 
+
 const Scene = () => {
   return (
     <Canvas
@@ -14,8 +15,8 @@ const Scene = () => {
         far: 1000,
       }}
     >
-      <World />
       <OrbitControls target={[0, 0, 0]} minDistance={110}/>
+      <World />
       <Quakes />
     </Canvas>
   )

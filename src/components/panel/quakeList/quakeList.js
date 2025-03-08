@@ -30,7 +30,7 @@ const QuakeList = () => {
     return (
         <div className="quake-list quake-list-scrollable-container">
             <div className="quake-list-items-container">
-                {(quakes).map(q => (<QuakeItem key={q.id} quake={q}/>))}
+                {(quakes).slice(0, 100).map(q => (<QuakeItem key={q.id} quake={q}/>))}
             </div>
         </div>
     )

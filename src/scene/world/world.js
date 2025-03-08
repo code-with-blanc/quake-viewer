@@ -34,10 +34,10 @@ export function World() {
     <>
       <mesh>
         <sphereGeometry args={[WORLD_RADIUS, 36, 36]} />
-        <meshBasicMaterial wireframe color="#353535" />
+        <meshBasicMaterial wireframe color="#333" />
       </mesh>
       <lineSegments geometry={linesGeometry}>
-        <lineBasicMaterial color="red" />
+        <lineBasicMaterial color="#446" />
       </lineSegments>
     </>
   ) : null
