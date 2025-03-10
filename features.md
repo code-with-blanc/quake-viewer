@@ -1,21 +1,24 @@
-# Ideas
+- [ ] Make start date relative to current date
+- [ ] Create mobile layout
+    - At least hide list or create popup telling to use on desktop
 
-- Whole world
-    - [ ] Create world mesh
-    - [ ] Make it a sphere
-    - [ ] Adjust coordinates
-    - [ ] Adjust camera
-
-- Layout improvements
-    - [x] Create layout components
-    - [x] Make sidebar resizable
-    - [x] Make sidebar collapsible
+- [ ] Handle too many quakes response
+    - [ ] At least show error to user
+    - [ ] Enable composing a dataset from multiple calls
 
 
-- magnitude filter
-- how it works popup
-- upgrade to vite or smth
-- collapsible quake list
-- quake timeline
+- [ ] Align poles to map
+- [ ] Make world instead of camera the target of rotation
+- [ ] Improve camera (change type)
+- [ ] Make world opaque
 
-- Mantle tomography
+- [ ] Decide how layout for more features would be
+    - [ ] Create magnitude filter
+    - [ ] Make color scale variable and palette configurable
+    - [ ] Make the timeline a chart of the quake frequency / magnitude
+    - [ ] Create play button
+    - [ ] Create layer control
+    - [ ] Create tectonic plates layer
+    - [ ] Create cities layer
+
+- [ ] Implement limiting coordinates
