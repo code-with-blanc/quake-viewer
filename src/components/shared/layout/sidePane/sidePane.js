@@ -34,9 +34,7 @@ export default function SidePaneLayout({ mainContent, sidePaneContent }) {
             onMouseMove={onMouseMove}
             onMouseUp={() => {setResizing(false)}}
         >
-            <div
-                className='side-pane-container'
-            >
+            <div className='side-pane-container'>
                 <div 
                     className='side-pane-content'
                     style={{

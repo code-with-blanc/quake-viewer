@@ -11,11 +11,14 @@ const Scene = () => {
     <Canvas
       style={{background: '#15151a'}}
       camera={{
-        position: [-40, 16, -110],
+        position: [100, -200, 250],
         far: 1000,
       }}
     >
-      <OrbitControls target={[0, 0, 0]} minDistance={110}/>
+      <OrbitControls
+        target={[0, 0, 0]}
+        minDistance={80}
+      />
       <World />
       <Quakes />
     </Canvas>

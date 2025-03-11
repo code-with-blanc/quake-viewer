@@ -14,11 +14,15 @@
     position: relative;
 
     --w-handle: 12px;
+
+    @media (max-width: 640px) {
+        display: none;
+    }
 }
 
 .side-pane-content {
     overflow: 'hidden';
-    transition: max-width 500ms;
+    transition: 500ms;
 }
 
 .side-pane-handle {

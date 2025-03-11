@@ -1,6 +1,7 @@
 - [ ] Make start date relative to current date
 - [ ] Create mobile layout
-    - At least hide list or create popup telling to use on desktop
+    - [x] Hide sidebar
+    - [ ] .... decide how mobile experience will be
 
 - [ ] Handle too many quakes response
     - [ ] At least show error to user
