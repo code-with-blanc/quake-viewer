@@ -22,7 +22,7 @@ export function World() {
         const geometry = new THREE.BufferGeometry()
         geometry.setAttribute('position', new THREE.Float32BufferAttribute(cartesianPoints, 3))
         geometry.scale(1.002, 1.002, 1.002)
-        // geometry.rotateX(-Math.PI/2)
+        geometry.rotateX(-Math.PI/2)
         return geometry
     
     }, [coordinates])
