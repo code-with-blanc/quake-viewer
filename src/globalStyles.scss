@@ -4,8 +4,16 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
 #root {
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     height: 100dvh;
     width: 100dvw;
