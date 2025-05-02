@@ -36,7 +36,7 @@ const initialState = {
     isLoading: false,
     isError: false,
 
-    startDate: Date.parse('2025-02-01 00:00'),
+    startDate: Date.now() - 30 * 24 * 60 * 60 * 1000,
     endDate: Date.now(),
 }
 
