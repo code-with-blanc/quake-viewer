@@ -17,19 +17,15 @@ function App() {
     });
 
     return (
-        <>
-            <div style={{ width: '100vw', height: '100vh', overflow: 'hidden'}}>
-                <SidePaneLayout
-                    sidePaneContent={<Panel />}
-                    mainContent={
-                        <OverLayLayout
-                            baseContent={<Scene />}
-                            overlayContent={<SceneOverlay />}
-                        />
-                    }
+        <SidePaneLayout
+            sidePaneContent={<Panel />}
+            mainContent={
+                <OverLayLayout
+                    baseContent={<Scene />}
+                    overlayContent={<SceneOverlay />}
                 />
-            </div>
-        </>
+            }
+        />
     );
 }
 
