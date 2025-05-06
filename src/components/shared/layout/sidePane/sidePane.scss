@@ -1,12 +1,12 @@
 .layout-side-pane {
     height: 100%;
     display: flex;
+    
+    background-color: var(--color-bg);
 
     &--resizing {
         cursor: w-resize;
     }
-
-    background-color: var(--color-bg);
 }
 
 .side-pane-container {
