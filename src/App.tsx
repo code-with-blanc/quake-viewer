@@ -6,10 +6,13 @@ import SceneOverlay from "./components/scene-overlay";
 import SidePaneLayout from "./components/shared/layout/sidePane/sidePane";
 import OverLayLayout from "./components/shared/layout/overlay/overlay";
 
-import "./App.scss";
 import { useLayersStore } from "./store/layers/layers";
+import "./App.scss";
+import "./tailwind.css"
 
 function App() {
+    document.documentElement.classList.add('dark')
+
     const { fetchLayers } = useLayersStore()
 
     useEffect(() => {
@@ -21,9 +24,9 @@ function App() {
         <SidePaneLayout
             sidePaneContent={<Panel />}
             mainContent={
-                <OverLayLayout
+                <OverLayLayout 
                     baseContent={<Scene />}
-                    overlayContent={<SceneOverlay />}
+                    overlayContent={<SceneOverlay />}  
                 />
             }
         />
