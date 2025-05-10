@@ -1,8 +1,8 @@
-import Timeline from './timeline'
-import IconButton from '../shared/iconButton/iconButton'
+import IconButton from '../../ui/iconButton/iconButton'
 import { GITHUB, LINKEDIN_PROFILE } from '../../env'
 
 import './sceneOverlay.scss'
+import Timeline from '../timeline'
 
 export default function SceneOverlay() {
   return (

@@ -2,7 +2,7 @@ import RangeSlider from 'react-range-slider-input'
 
 import 'react-range-slider-input/dist/style.css'
 import './timelineSlider.scss'
-import { useTimelineStore } from '../../../../store/timeline/timeline'
+import { useTimelineStore } from '@/store/timeline/timeline'
 
 const TimelineSlider = () => {  
     const {

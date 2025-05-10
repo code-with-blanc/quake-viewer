@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useQuakesStore } from "../../../store/quakes/quakes";
 
 import * as Feather from "react-feather";
 import "./quakeList.scss";
+import { useQuakesStore } from "@/store/quakes/quakes";
 
 const QuakeList = () => {
     const { quakes, state } = useQuakesStore()

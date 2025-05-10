@@ -3,7 +3,7 @@ import "react-datepicker/dist/react-datepicker.css"
 import './timeline.scss'
 import DateButton from './dateButton'
 import TimelineSlider from './timelineSlider'
-import { useTimelineStore } from "../../../store/timeline/timeline"
+import { useTimelineStore } from "@/store/timeline/timeline"
 
 const DateSlider = () => {
   const {

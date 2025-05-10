@@ -1,4 +1,4 @@
-import { OrbitControls, GizmoHelper, GizmoViewport } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber'
 
 import { Quakes } from './quakes/quakes';
@@ -20,9 +20,9 @@ const Scene = () => {
       />
       <World />
       <Quakes />
-      <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+      {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
         <GizmoViewport />
-      </GizmoHelper>
+      </GizmoHelper> */}
     </Canvas>
   )
 }
