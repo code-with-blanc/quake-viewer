@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect } from "react"
 
-import { useLayersStore } from "./store/layers/layers";
-import "./App.scss";
+import { useLayersStore } from "./store/layers/layers"
+import { Page } from "./page/page"
+
 import "./tailwind.css"
-import { Page } from "./page/page";
+import "./App.scss"
 
 function App() {
     document.documentElement.classList.add('dark')
@@ -12,11 +13,11 @@ function App() {
 
     useEffect(() => {
         fetchLayers()
-    }, [fetchLayers]);
+    }, [fetchLayers])
     
     return (
         <Page />
-    );
+    )
 }
 
 export default App;

@@ -1,0 +1,15 @@
+.sidebar {
+    height: 100%;
+    
+    display: flex;
+    align-items: stretch;
+
+    &__content {
+        flex-grow: 1;
+    }
+}
+
+
+
+
+/////////////////////////

@@ -10,20 +10,36 @@ export default function SidePaneLayout({ mainContent, sidePaneContent }) {
     const [resizing, setResizing] = useState(false);
     const [open, setOpen] = useState(true);
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const handleRef = useRef<any>(null)
+    const handleRef = useRef<HTMLDivElement>(null)
+    const paneRef = useRef<HTMLDivElement>(null)
 
-    const onMouseMove = (e) => {
+
+    const onMouseMove = (ev: React.MouseEvent) => {
         if(resizing) {
             const rect = handleRef?.current?.getBoundingClientRect()
-            const x = rect.x + rect.width/2
-            const mouseX = e.clientX
+            const paneRect = paneRef?.current?.getBoundingClientRect()
 
-            let w = width - (x - mouseX)
+            if(rect === undefined) {
+                console.log('no bounding rect')
+                return
+            }
+
+            if(paneRect === undefined) {
+                console.log('no pane bounding rect')
+                return
+            }
+            
+            const targetW = ev.clientX - paneRect.left
+
+            const handleCenterX = rect.x + rect.width/2
+            const mouseX = ev.clientX
+
+            let w = width - (handleCenterX - mouseX)
             if(w < MIN_WIDTH) w = MIN_WIDTH;
             if(w > MAX_WIDTH) w = MAX_WIDTH;
 
-            setWidth(w)
+            console.log('set maxW: ', targetW)
+            setWidth(targetW)
         }
     }
 
@@ -35,12 +51,14 @@ export default function SidePaneLayout({ mainContent, sidePaneContent }) {
             onMouseMove={onMouseMove}
             onMouseUp={() => {setResizing(false)}}
         >
-            <div className='side-pane-container'>
+            <div className='side-pane-container'
+            ref={paneRef}
+            >
                 <div 
                     className='side-pane-content'
                     style={{
                         width: width,
-                        maxWidth: open ? '50vw' : '0'
+                        // maxWidth: open ? '50vw' : '0'
                     }}
                 >
                     {sidePaneContent}
