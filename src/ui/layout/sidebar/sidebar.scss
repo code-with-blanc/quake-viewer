@@ -1,10 +1,13 @@
 .sidebar {
+    --handle-bg: var(--sidebar-bg, transparent);
+
     height: 100%;
     
     display: flex;
     align-items: stretch;
 
     &__content {
+        background: var(--sidebar-bg, transparent);
         flex-grow: 1;
     }
 }

@@ -3,33 +3,42 @@ import { Children, isValidElement, ReactElement, useCallback, useEffect, useRef,
 import './sidebar.scss'
 import { SidebarHandle } from "./internal/sidebarHandle"
 import { SidebarContent } from "./internal/sidebarContent"
+import { cn } from "@/utils/classnames";
 
 interface SidebarProps {
-    initialWidth?: string,
+    initialWidthPx?: number,
     minWidthPx?: number,
     maxWidthPx?: number,
-    children?: React.ReactNode
+    children?: React.ReactNode,
+    className?: string;
+    onResize?: (width: number) => void
 }
 
 interface SidebarParts {
     Content: typeof SidebarContent
 }
 
-const SIDEBAR_HANDLE_W_PX = 20
+export const SIDEBAR_HANDLE_W_PX = 20
 
 const Sidebar: (React.FC<SidebarProps> & SidebarParts) = ({
-    initialWidth,
+    initialWidthPx: initialWidth,
     minWidthPx = 0,
     maxWidthPx = window.innerWidth,
-    children
+    children,
+    className,
+    onResize
 }) => {
     const content = Children.toArray(children).filter(c => isContent(c))
 
     const sidebarRef = useRef<HTMLDivElement>(null)
 
-    const [width, setWidth] = useState<string | number>(initialWidth ?? minWidthPx+'px');
+    const [width, _setWidth] = useState<number>(initialWidth ?? minWidthPx);
     const [resizing, setResizing] = useState(false);
     const [open, setOpen] = useState(true);
+    const setWidth = useCallback((w: number) => {
+        onResize?.(w)
+        _setWidth?.(w)
+    }, [onResize, _setWidth])
 
     const onMouseUp = useCallback(() => {
         setResizing(false)
@@ -51,17 +60,17 @@ const Sidebar: (React.FC<SidebarProps> & SidebarParts) = ({
         if (resizing) {
             window.addEventListener('mousemove', onMouseMove);
             window.addEventListener('mouseup', onMouseUp);
-          }
-      
-          return () => {
+        }
+    
+        return () => {
             window.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('mouseup', onMouseUp);
-          };
+        }
     }, [onMouseMove, onMouseUp, resizing])
 
     return (
         <div
-            className='sidebar'
+            className={cn('sidebar', className)}
             style={{
                 width: open ? width : 0,
             }}

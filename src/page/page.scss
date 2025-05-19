@@ -1,0 +1,24 @@
+.page {
+    height: 100%;
+
+    position: relative;
+
+    &__scene {
+        box-sizing: content-box;
+        height: 100%;
+    }
+
+    &__sidebar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        // right: 50vw;
+        z-index: 100;
+
+
+        --sidebar-bg: var(--color-bg);
+    }
+
+
+}

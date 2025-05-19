@@ -3,25 +3,24 @@
     --handle-color-hover: var(--color-off-white-bright);
     --btn-h: 80px;
     --btn-w: 24px;
-    --btn-bg: black;
-
+    --btn-bg: var(--color-bg);
 
     height: 100%;
     width: var(--w-handle);
 
     background: linear-gradient(90deg, 
-        transparent         calc(50% - 1.5px), 
-        var(--handle-color) calc(50% - 0.5px), 
-        var(--handle-color) calc(50% - 0.5px), 
-        transparent         calc(50% + 1.5px)
+        var(--handle-bg, transparent) calc(50% - 1.5px), 
+        var(--handle-color)           calc(50% - 0.5px), 
+        var(--handle-color)           calc(50% - 0.5px), 
+        transparent                   calc(50% + 1.5px)
     );
 
     &:hover {
         background: linear-gradient(90deg, 
-            transparent               calc(50% - 2px), 
-            var(--handle-color-hover) calc(50% - 0.5px), 
-            var(--handle-color-hover) calc(50% + 0.5px), 
-            transparent               calc(50% + 2px)
+            var(--handle-bg, transparent) calc(50% - 2px), 
+            var(--handle-color-hover)     calc(50% - 0.5px), 
+            var(--handle-color-hover)     calc(50% + 0.5px), 
+            transparent                   calc(50% + 2px)
         );
     }
 

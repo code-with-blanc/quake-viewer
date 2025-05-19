@@ -1,6 +1,6 @@
 :root {
-    --color-bg: #333;
-    --color-bg-hover: #222;
-    --color-off-white: #888;
-    --color-off-white-bright: #DDD;
+    --color-bg: var(--secondary);
+    --color-bg-hover: var(--muted);
+    --color-off-white: var(--border);
+    --color-off-white-bright: var(--ring);
 }

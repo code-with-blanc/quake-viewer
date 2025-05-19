@@ -4,11 +4,9 @@ import { Canvas } from '@react-three/fiber'
 import { Quakes } from './quakes/quakes';
 import { World } from './world/world';
 
-
 const Scene = () => {
   return (
     <Canvas
-      style={{background: '#15151a'}}
       camera={{
         position: [100, -200, 250],
         far: 1000,
