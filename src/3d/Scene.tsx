@@ -7,6 +7,7 @@ import { World } from './world/world';
 const Scene = () => {
   return (
     <Canvas
+      frameloop='demand'
       camera={{
         position: [100, -200, 250],
         far: 1000,

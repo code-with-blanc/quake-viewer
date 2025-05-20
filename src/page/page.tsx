@@ -1,12 +1,16 @@
 import Scene from "@/3d"
 import QuakeList from "./quakeList"
 import { Sidebar, SIDEBAR_HANDLE_W_PX } from "@/ui/layout/sidebar/sidebar"
+import { useState } from "react"
+import { useThrottle, useWindowSize } from "@uidotdev/usehooks"
 
 import './page.scss'
-import { useState } from "react"
 
 export const Page = () => {
     const [sidebarWidth, setSidebarWidth] = useState(200)
+    const windowSize = useWindowSize()
+    const throttledSidebarWidth = useThrottle(sidebarWidth, 100)
+    
 
     return (
         <div className="page">
@@ -21,7 +25,10 @@ export const Page = () => {
             </Sidebar>
             <div
                 className="page__scene"
-                style={{ marginLeft: sidebarWidth-SIDEBAR_HANDLE_W_PX }}
+                style={{ 
+                    width: window.innerWidth - (throttledSidebarWidth-SIDEBAR_HANDLE_W_PX),
+                    right: 0,
+                }}
             >
                 <Scene />
             </div>       
