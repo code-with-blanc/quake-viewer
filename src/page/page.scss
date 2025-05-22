@@ -4,7 +4,9 @@
     position: relative;
 
     &__scene {
-        box-sizing: content-box;
+        position: absolute;
+        right: 1px;
+        
         height: 100%;
     }
 
@@ -13,12 +15,8 @@
         left: 0;
         top: 0;
         bottom: 0;
-        // right: 50vw;
         z-index: 100;
-
 
         --sidebar-bg: var(--color-bg);
     }
-
-
 }

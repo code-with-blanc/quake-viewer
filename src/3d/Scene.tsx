@@ -3,8 +3,9 @@ import { Canvas } from '@react-three/fiber'
 
 import { Quakes } from './quakes/quakes';
 import { World } from './world/world';
+import { memo } from 'react';
 
-const Scene = () => {
+const Scene = memo(() => {
   return (
     <Canvas
       frameloop='demand'
@@ -24,6 +25,6 @@ const Scene = () => {
       </GizmoHelper> */}
     </Canvas>
   )
-}
+})
 
 export default Scene

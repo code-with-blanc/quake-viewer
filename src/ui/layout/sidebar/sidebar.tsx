@@ -1,4 +1,4 @@
-import { Children, isValidElement, ReactElement, useCallback, useEffect, useRef, useState } from "react"
+import { Children, isValidElement, memo, ReactElement, useCallback, useEffect, useRef, useState } from "react"
 
 import './sidebar.scss'
 import { SidebarHandle } from "./internal/sidebarHandle"
@@ -20,7 +20,7 @@ interface SidebarParts {
 
 export const SIDEBAR_HANDLE_W_PX = 20
 
-const Sidebar: (React.FC<SidebarProps> & SidebarParts) = ({
+const SidebarComponent = memo<SidebarProps>(({
     initialWidthPx: initialWidth,
     minWidthPx = 0,
     maxWidthPx = window.innerWidth,
@@ -73,12 +73,15 @@ const Sidebar: (React.FC<SidebarProps> & SidebarParts) = ({
             className={cn('sidebar', className)}
             style={{
                 width: open ? width : 0,
+
             }}
             ref={sidebarRef}
         >
             <div 
                 className="sidebar__content"
-                style={open ? {} : { display: 'none' }}
+                style={open ? {} : {
+                    display: 'none'
+                }}
             >
                 {content}
             </div>
@@ -89,17 +92,21 @@ const Sidebar: (React.FC<SidebarProps> & SidebarParts) = ({
                 onButtonClick={() => {
                     setResizing(false)
                     setOpen(open => !open)
+                    onResize?.(SIDEBAR_HANDLE_W_PX)
                 }}
                 onMouseDown={() => {
-                    setResizing(true)
+                    if(open) { setResizing(true) }
                 }}
                 onClick={() => {
-                    if(!open) { setOpen(true) }
+                    if(!open) { 
+                        setOpen(true)
+                        onResize?.(width)
+                    }
                 }}
             />
         </div>
     )
-}
+})
 
 // utility
 const isContent = (
@@ -109,5 +116,12 @@ const isContent = (
 };
 
 // export
-Sidebar.Content = SidebarContent
+export type Sidebar = typeof SidebarComponent & SidebarParts
+const Sidebar: Sidebar = Object.assign(
+    SidebarComponent,
+    {
+        Content: SidebarContent
+    }
+)
+
 export { Sidebar }
