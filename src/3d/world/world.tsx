@@ -2,7 +2,8 @@ import { useMemo } from 'react'
 import * as THREE from 'three'
 
 import { coordsToCartesian, WORLD_RADIUS } from '../utils'
-import { GeoJson, useLayersStore } from '../../store/layers/layers'
+import { useLayersStore } from '../../store/layers/layers'
+import { GeoJson } from '@/model/geojson'
 
 
 export function World() {
