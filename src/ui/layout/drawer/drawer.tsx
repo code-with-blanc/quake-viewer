@@ -20,7 +20,7 @@ export const Drawer: FunctionComponent<{
             open={true}
             dismissible={false}
         >
-            <Vaul.Content>
+            <Vaul.Content style={{ outline: 'none' }}>
                 <DialogTitle style={{ display: 'none' }} >Earthquake list</DialogTitle>
                 <div className="drawer">
                     <div className="drawer__handle">

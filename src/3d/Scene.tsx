@@ -17,12 +17,13 @@ const Scene = memo(() => {
       <OrbitControls
         target={[0, 0, 0]}
         minDistance={80}
+        enablePan={false}
       />
-      <World />
-      <Quakes />
-      {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
-        <GizmoViewport />
-      </GizmoHelper> */}
+        <World />
+        <Quakes />
+        {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+          <GizmoViewport />
+        </GizmoHelper> */}
     </Canvas>
   )
 })
