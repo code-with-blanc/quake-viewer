@@ -1,0 +1,28 @@
+.drawer {
+    border: solid 1px oklch(0.13 0.0274 261.69);
+    border-radius: 3em 3em 0 0;
+    margin: 1px;
+    height: 80dvh;
+
+    background-color: var(--color-bg);
+
+
+    &__handle {
+        padding-top: 12px;
+        margin-bottom: 20px;
+
+        &-vaul {
+            margin-top: calc(var(--handle-h));
+            width: 40vw !important;
+
+            span {
+                transform: translate(-50%, -3em);
+                height: max(100%, 4rem);
+            }
+        }
+    }
+
+    &__content-container {
+        height: calc(80vh - 22px);
+    }
+}

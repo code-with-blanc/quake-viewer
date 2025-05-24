@@ -1,5 +1,5 @@
 .sidebar {
-    --handle-bg: var(--sidebar-bg, transparent);
+    --handle-bg: var(--color-bg, transparent);
 
     height: 100%;
     
@@ -8,7 +8,7 @@
     
     &__content {
         overflow: hidden;
-        background: var(--sidebar-bg, transparent);
+        background: var(--color-bg, transparent);
         flex-grow: 1;
     }
 }
