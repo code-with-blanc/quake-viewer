@@ -1,6 +1,7 @@
 :root {
-    --color-bg: var(--secondary);
-    --color-bg-hover: var(--muted);
+    --surface: var(--secondary);
+    --surface-hover: var(--muted);
+    --surface-border: oklch(0.13 0.0274 261.69);
     --color-off-white: var(--border);
     --color-off-white-bright: var(--ring);
 }

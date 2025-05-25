@@ -1,38 +1,32 @@
-import "react-datepicker/dist/react-datepicker.css"
-
-import './timeline.scss'
-import DateButton from './dateButton'
-import TimelineSlider from './timelineSlider'
 import { useTimelineStore } from "@/store/timeline/timeline"
+import RangeSlider from 'react-range-slider-input'
+
+import 'react-range-slider-input/dist/style.css'
+import './timeline.scss'
+
 
 const DateSlider = () => {
-  const {
-    minRangeDate,
-    maxRangeDate,
-    setMinRangeDate,
-    setMaxRangeDate
-  } = useTimelineStore()
+    const {
+      minRangeDate,
+      maxRangeDate,
+      startDate,
+      endDate,
+      setSelectedDateRange
+   } = useTimelineStore()
 
   return (
     <div className="timeline-container">
-      <div className="timeline-date-start">
-        <DateButton
-          value={minRangeDate}
-          onChange={(date) => setMinRangeDate(date)}
-        />
-      </div>
-      <div className="timeline-slider" >
-        <TimelineSlider />
-      </div>
-      <div className="timeline-date-end">
-        <DateButton 
-          value={maxRangeDate}
-          onChange={(date) => setMaxRangeDate(date)}
-        />
-      </div>
+      <RangeSlider
+        className="range-slider"
+        min={minRangeDate.getTime()}
+        max={maxRangeDate.getTime()}
+        value={[startDate.getTime(), endDate.getTime()]}
+        onInput={(param) => {
+            setSelectedDateRange(new Date(param[0]), new Date(param[1]))
+        }}
+      />
     </div>
   )
 }
-
 
 export default DateSlider

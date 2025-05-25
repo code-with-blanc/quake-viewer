@@ -1,7 +1,7 @@
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
-import { coordsToCartesian, WORLD_RADIUS } from "../utils";
-import { useFrame } from "@react-three/fiber";
+import { coordsToCartesian, QUAKE_LAYER_DEPTH, QUAKE_MAX_DEPTH_KM, WORLD_RADIUS } from "../utils";
+import { invalidate, useFrame } from "@react-three/fiber";
 import { useQuakesStore } from "../../store/quakes/quakes";
 import { useTimelineStore } from "../../store/timeline/timeline";
 
@@ -32,8 +32,10 @@ export const Quakes = () => {
       if (meshRef.current) {
         meshRef.current.material.uniforms.uMinTime.value = minTime/DATE_2100
         meshRef.current.material.uniforms.uMaxTime.value = maxTime/DATE_2100
-    }
+      }
     })
+
+    invalidate()
 
     return <points ref={meshRef} geometry={geometry} material={material} />
 };
@@ -49,7 +51,7 @@ const createGeometry = (quakes) => {
         const cartesian = coordsToCartesian([
             q.longitude,
             q.latitude,
-            WORLD_RADIUS - 0.02*q.depth
+            WORLD_RADIUS - (QUAKE_LAYER_DEPTH*(q.depth/QUAKE_MAX_DEPTH_KM))
         ])
 
         positions[i * 3 + 0] = cartesian[0]
@@ -72,6 +74,8 @@ const createGeometry = (quakes) => {
 
 const createShaderMaterial = ({ minTime, maxTime }) => {
     return new THREE.ShaderMaterial({
+        // depthWrite: false,
+        // depthTest: false,
         uniforms: {
             uMinTime: { value: minTime/DATE_2100 },
             uMaxTime: { value: maxTime/DATE_2100 }
@@ -149,6 +153,5 @@ const createShaderMaterial = ({ minTime, maxTime }) => {
                 gl_FragColor = vec4(colormap(vMagnitude), 1.0);
             }
         `,
-        transparent: true
     })
 }

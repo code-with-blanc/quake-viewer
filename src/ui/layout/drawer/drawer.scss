@@ -1,10 +1,10 @@
 .drawer {
-    border: solid 1px oklch(0.13 0.0274 261.69);
+    border: solid 1px var(--surface-border);
     border-radius: 3em 3em 0 0;
     margin: 1px;
     height: 80dvh;
 
-    background-color: var(--color-bg);
+    background-color: var(--surface);
 
 
     &__handle {
@@ -16,8 +16,11 @@
             width: 40vw !important;
 
             span {
-                transform: translate(-50%, -3em);
-                height: max(100%, 4rem);
+                // touch area
+                height: 3rem;
+                width: calc(100% + 2em);
+
+                transform: translate(-50%, -1.8em);
             }
         }
     }

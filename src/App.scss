@@ -35,13 +35,13 @@ div {
     }
 
     &::-webkit-scrollbar-track {
-        background: var(--color-bg);
+        background: var(--surface);
     }
 
     &::-webkit-scrollbar-thumb {
         background-color: var(--color-off-white);
         border-radius: 6px;
-        border: solid 2px var(--color-bg);
+        border: solid 2px var(--surface);
     }
 }
 

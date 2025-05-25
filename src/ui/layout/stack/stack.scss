@@ -1,0 +1,11 @@
+.stack-divs__base {
+    height: 100%;
+
+    position: relative;
+    pointer-events: none;
+}
+
+.stack-divs__layer {
+    position: absolute;
+    inset: 0;
+}

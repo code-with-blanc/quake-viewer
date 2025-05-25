@@ -1,27 +1,43 @@
-import Scene from "@/3d"
-import QuakeList from "./quakeList"
-import { Sidebar, SIDEBAR_HANDLE_W_PX } from "@/ui/layout/sidebar/sidebar"
+
 import { useState } from "react"
-import { useThrottle, useWindowSize } from "@uidotdev/usehooks"
+import { useThrottle } from "@uidotdev/usehooks"
+
+import { Sidebar, SIDEBAR_HANDLE_W_PX } from "@/ui/layout/sidebar/sidebar"
+import { Drawer } from "@/ui/layout/drawer/drawer"
+import { useLayout } from "@/utils/useLayout"
+import Stack from "@/ui/layout/stack/stack"
+
+import Scene from "@/3d/scene"
+import QuakeList from "./quakeList"
+import Timeline from "./timeline"
 
 import './page.scss'
-import { Drawer } from "@/ui/layout/drawer/drawer"
 
 export const Page = () => {
-    const [sidebarWidth, setSidebarWidth] = useState(200)
-    const throttledSidebarWidth = useThrottle(sidebarWidth, 100)
-    const { width: innerWidth } = useWindowSize()
-    const mobile = innerWidth === null || innerWidth < 768
+    const { mobile, dimensions } = useLayout()
+
+    const [_sidebarWidth, setSidebarWidth] = useState(dimensions.sidebarInitialW)
+    const sidebarWidth = useThrottle(_sidebarWidth, 100)
 
     return (
         <div className="page">
             <div
                 className="page__scene"
                 style={{ 
-                    left: mobile ? 0 : throttledSidebarWidth-SIDEBAR_HANDLE_W_PX,
+                    left: mobile ? 0 : sidebarWidth-SIDEBAR_HANDLE_W_PX/2,
+                    paddingBottom: mobile ? `calc(0.5 * ${dimensions.drawerClosedSnap})` : 0,
                 }}
             >
-                <Scene />
+                <Stack>
+                    <Scene />
+                    <div
+                        className="page__scene__timeline"
+                        style={{
+                        }}
+                    >
+                        <Timeline />
+                    </div>
+                </Stack>
             </div>
             {
                 mobile ? (
@@ -31,7 +47,8 @@ export const Page = () => {
                 ) : (
                     <Sidebar
                         className="page__sidebar"
-                        minWidthPx={200}
+                        minWidthPx={300}
+                        initialWidthPx={dimensions.sidebarInitialW}
                         onResize={(w) => setSidebarWidth(w)}
                     >
                         <Sidebar.Content>
@@ -39,10 +56,7 @@ export const Page = () => {
                         </Sidebar.Content>
                     </Sidebar>
                 )
-
             }
-
-
         </div>
     )
 }

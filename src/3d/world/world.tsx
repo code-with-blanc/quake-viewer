@@ -6,6 +6,45 @@ import { useLayersStore } from '../../store/layers/layers'
 import { GeoJson } from '@/model/geojson'
 
 
+const createFadeOpacityMaterial = ({ radius } : { radius: number }) => {
+  return new THREE.ShaderMaterial({
+    transparent: true,
+    // depthTest: false,
+    depthWrite: false,
+    // side: THREE.DoubleSide,
+    uniforms: {
+      uColor: { value: new THREE.Color('black') },
+      uRadius: { value: radius }
+    },
+    vertexShader: `
+    varying vec3 vNormalW;
+    varying vec3 vViewDir;
+    void main() {
+      vNormalW = normalize(mat3(modelMatrix) * normal);
+
+      // compute view direction
+      vec4 worldPos = modelMatrix * vec4(position, 1.0);
+      vViewDir = cameraPosition - worldPos.xyz;
+
+      gl_Position = projectionMatrix * viewMatrix * worldPos;
+    }
+
+    `,
+    fragmentShader: `
+    uniform vec3 uColor;
+    varying vec3 vNormalW;
+    varying vec3 vViewDir;
+
+    void main() {
+      float cosAngle = dot(normalize(vNormalW), normalize(vViewDir));
+      float alpha = smoothstep(0.1, 0.7, cosAngle);
+
+      gl_FragColor = vec4(uColor, pow(alpha, 1.4)*0.5);
+    }
+    `
+  })
+}
+
 export function World() {
     const { layers } = useLayersStore()
 
@@ -30,17 +69,19 @@ export function World() {
 
   return linesGeometry ? (
     <>
-      <mesh>
+      <mesh renderOrder={-1} material={createFadeOpacityMaterial({ radius: 0.9*WORLD_RADIUS })}>
+          <sphereGeometry args={[WORLD_RADIUS, 36, 36]} />
+      </mesh>
+      <mesh renderOrder={0}>
         <sphereGeometry args={[WORLD_RADIUS, 36, 36]} />
-        <meshBasicMaterial wireframe color="#333" />
+        <meshBasicMaterial wireframe color="#252540" />
       </mesh>
       <lineSegments geometry={linesGeometry}>
-        <lineBasicMaterial color="#446" />
+        <lineBasicMaterial color="#456" />
       </lineSegments>
     </>
   ) : null
 }
-
 
 
 function geoJsonToPoints(countries: GeoJson[]) {

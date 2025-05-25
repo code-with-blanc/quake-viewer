@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
-  },  
+  },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.13",
     "@react-three/drei": "^10.0.7",
@@ -26,7 +26,6 @@
     "react": "^19.0.0",
     "react-datepicker": "^8.3.0",
     "react-dom": "^19.0.0",
-    "react-feather": "^2.0.10",
     "react-range-slider-input": "^3.2.1",
     "redux": "^5.0.1",
     "sass": "^1.87.0",
@@ -35,6 +34,7 @@
     "three": "^0.176.0",
     "usehooks-ts": "^3.1.1",
     "vaul": "^1.1.2",
+    "vite-plugin-glsl": "^1.4.1",
     "zustand": "^5.0.4"
   },
   "devDependencies": {
