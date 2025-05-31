@@ -9,7 +9,7 @@ import './scene.scss'
 import { CameraControl } from './camera/cameraControl';
 import { Countries } from './objects/countries';
 
-const Scene = memo(() => {
+export const Scene = memo(() => {
   return (
     <Canvas
       className='scene__canvas'
@@ -31,5 +31,3 @@ const Scene = memo(() => {
     </Canvas>
   )
 })
-
-export default Scene

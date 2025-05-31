@@ -1,6 +1,6 @@
 import './stack.scss'
 
-export default function Stack({ children }) {
+export function Stack({ children }) {
     return (
         <div className="stack-divs__base">
             { children.map((c, i) => (

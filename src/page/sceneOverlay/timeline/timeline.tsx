@@ -4,8 +4,7 @@ import RangeSlider from 'react-range-slider-input'
 import 'react-range-slider-input/dist/style.css'
 import './timeline.scss'
 
-
-const DateSlider = () => {
+export const Timeline: React.FC = () => {
     const {
       minRangeDate,
       maxRangeDate,
@@ -28,5 +27,3 @@ const DateSlider = () => {
     </div>
   )
 }
-
-export default DateSlider

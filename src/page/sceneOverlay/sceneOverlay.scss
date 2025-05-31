@@ -1,0 +1,103 @@
+.scene-overlay {
+    height: 100%;
+
+    position: relative;
+
+    // overlay div does not participate in touch....
+    pointer-events: none;    
+    & > * {
+        // ....but children do
+        pointer-events: auto;
+    }
+
+    &__timeline {
+        position: absolute;
+        inset: auto 1rem 3rem 1rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: end;
+
+        @media(min-width: 768px) {
+            inset: auto 2rem 5rem 2rem;
+        }
+    }
+
+    &__about-btn {
+        position: absolute;
+        inset: 0.5em 0 auto 0;
+        z-index: 2;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    &__about-dialog {
+        position: absolute;
+        inset: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+}
+
+.about-btn {
+    padding: 0 3em;
+    position: relative;
+
+    color: rgba(250, 255, 255, 0.4);
+    cursor: pointer;
+
+    --line-color: currentColor;
+    &--no-line {
+        --line-color: transparent;
+    }
+
+    &:hover {
+        color: rgba(250, 255, 255, 0.8);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+        
+        width: 100%;
+        border-bottom: solid 1px var(--line-color);
+    }
+
+
+    &__label {
+        padding: 0 0.5em;
+        font-size: 0.7em;
+        background: var(--background);
+    }
+}
+
+.about-dialog {
+    max-width: 40em;
+
+    margin: 1em;
+    padding: 1em;
+
+    border: solid white 1px;
+    border-radius: 16px;
+    background-color: var(--background);
+
+    text-align: justify;
+    text-justify: distribute-all-lines;
+
+    div {
+        padding: 0.5em 0;
+    }
+
+    &__socials {
+       display: flex;
+       flex-direction: column;
+       align-items: start;
+       gap: 0.5em; 
+    }
+}

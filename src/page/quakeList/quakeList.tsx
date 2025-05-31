@@ -5,7 +5,7 @@ import { useQuakesStore } from "@/store/quakes/quakes";
 
 import "./quakeList.scss";
 
-const QuakeList = () => {
+export const QuakeList = () => {
     const { quakes, state } = useQuakesStore()
 
     if (state === 'ERROR') {
@@ -67,5 +67,3 @@ const QuakeItem = ({ quake }) => {
 
 )
 }
-
-export default QuakeList;

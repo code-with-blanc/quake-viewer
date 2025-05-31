@@ -6,29 +6,6 @@
     &__scene {
         position: absolute;
         inset: 0;
-        
-
-        
-        &__timeline {
-            height: 100%;
-            padding: 3rem 1rem;
-
-            display: flex;
-            justify-content: center;
-            align-items: end;
-
-            // overlay div does not participate in touch....
-            pointer-events: none;
-            
-            & > * {
-                // ....but children do
-                pointer-events: auto;
-            }
-
-            @media(min-width: 768px) {
-                padding: 2rem 5rem;
-            }
-        }
     }
 
     &__sidebar {

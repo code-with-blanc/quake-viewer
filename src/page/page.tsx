@@ -5,11 +5,11 @@ import { useThrottle } from "@uidotdev/usehooks"
 import { Sidebar, SIDEBAR_HANDLE_W_PX } from "@/ui/layout/sidebar/sidebar"
 import { Drawer } from "@/ui/layout/drawer/drawer"
 import { useLayout } from "@/utils/useLayout"
-import Stack from "@/ui/layout/stack/stack"
+import { QuakeList } from "./quakeList/quakeList"
 
-import Scene from "@/3d/scene"
-import QuakeList from "./quakeList"
-import Timeline from "./timeline"
+import { Stack } from "@/ui/layout/stack/stack"
+import { Scene } from "@/3d/scene"
+import { SceneOverlay } from "./sceneOverlay/sceneOverlay"
 
 import './page.scss'
 
@@ -30,13 +30,7 @@ export const Page = () => {
             >
                 <Stack>
                     <Scene />
-                    <div
-                        className="page__scene__timeline"
-                        style={{
-                        }}
-                    >
-                        <Timeline />
-                    </div>
+                    <SceneOverlay />
                 </Stack>
             </div>
             {
