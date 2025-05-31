@@ -1,7 +1,9 @@
-import * as Feather from "react-feather"
+import { HTMLAttributes } from "react";
+
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 import './sidebarHandle.scss'
-import { HTMLAttributes } from "react";
+
 
 type SidebarHandleProps = {
     open: boolean,
@@ -23,7 +25,7 @@ export const SidebarHandle: React.FC<SidebarHandleProps> = ({
     >
         <div className='sidebar-handle__btn'>
             <div onClick={() => onButtonClick?.()}>
-                { open ? <Feather.ChevronLeft /> : <Feather.ChevronRight /> }
+                { open ? <ChevronLeft /> : <ChevronRight /> }
             </div>
         </div>
     </div>

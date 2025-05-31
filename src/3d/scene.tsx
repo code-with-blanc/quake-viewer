@@ -2,26 +2,30 @@ import { memo } from 'react';
 
 import { Canvas } from '@react-three/fiber'
 
-import { Quakes } from './quakes/quakes';
-import { World } from './world/world';
+import { Quakes } from './objects/quakes';
+import { Globe } from './objects/globe';
 
 import './scene.scss'
-import { CameraControl } from './cameraControl';
+import { CameraControl } from './camera/cameraControl';
+import { Countries } from './objects/countries';
 
 const Scene = memo(() => {
   return (
     <Canvas
       className='scene__canvas'
       frameloop='demand'
+      
       camera={{
         position: [100, -200, 250],
+        up: [0, 0, 1],
         far: 1000,
       }}
     >
       <CameraControl />
-      <World />
+      <Globe />
+      <Countries />
       <Quakes />
-      {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+      {/* <GizmoHelper alignment="bottom-right" margin={[120, 160]}>
         <GizmoViewport />
       </GizmoHelper> */}
     </Canvas>

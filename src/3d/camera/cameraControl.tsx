@@ -10,7 +10,7 @@ export function CameraControl() {
   const controlRef = useRef<InstanceType<typeof _OrbitControls>>(null)
   const { camera, gl, invalidate } = useThree()
 
-  const [targetDistance, setTargetDistance] = useState<number | null>(400)
+  const [targetDistance, setTargetDistance] = useState<number | null>(300)
 
   useEffect(() => {
     const control = controlRef.current

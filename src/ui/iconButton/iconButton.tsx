@@ -1,4 +1,5 @@
-import { Feather } from 'react-feather'
+import { Feather } from 'lucide-react'
+
 import './iconButton.scss'
 
 export default function IconButton({ alt, onClick }) {

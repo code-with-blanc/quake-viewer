@@ -1,8 +1,9 @@
 import { useState } from "react";
 
-import * as Feather from "react-feather";
-import "./quakeList.scss";
+import { ExternalLink } from 'lucide-react'
 import { useQuakesStore } from "@/store/quakes/quakes";
+
+import "./quakeList.scss";
 
 const QuakeList = () => {
     const { quakes, state } = useQuakesStore()
@@ -39,6 +40,9 @@ const QuakeItem = ({ quake }) => {
 
     const date = new Date(quake.time)
     
+    const lat = Number(Math.abs(quake.latitude)).toFixed(2)  + ' ' + ((quake.latitude > 0) ? 'N' : 'S')
+    const lon = Number(Math.abs(quake.longitude)).toFixed(2) + ' ' + ((quake.longitude > 0) ? 'E' : 'W')
+
     return (
         <>
             <div className="quake-list-item" onClick={() => setOpen(!open)}>
@@ -48,12 +52,12 @@ const QuakeItem = ({ quake }) => {
                 
                 {open ? (
                     <div className="quake-list-item-details">
-                        <div className="quake-list-item-details-lat">Lat: {Number(quake.latitude).toFixed(2)}</div>
-                        <div className="quake-list-item-details-long">Long: {Number(quake.longitude).toFixed(2)}</div>
-                        <div className="quake-list-item-details-depth">Depth: {quake.depth} km</div>
+                        <div className="quake-list-item-details-lat">Lat: {lat}</div>
+                        <div className="quake-list-item-details-long">Long: {lon}</div>
+                        <div className="quake-list-item-details-depth">Depth: {Number(quake.depth).toFixed(1)} km</div>
                         <div className="quake-list-item-details-link">
                             <a href={quake.url} rel="noreferrer" target="_blank">USGS Catalogue</a>
-                            <Feather.ExternalLink size={14} />
+                            <ExternalLink size={14} />
                         </div>
                     </div>
                 ) : null}
