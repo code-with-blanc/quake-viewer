@@ -12,7 +12,7 @@
 
     &__timeline {
         position: absolute;
-        inset: auto 1rem 3rem 1rem;
+        inset: auto 1rem 2rem 1rem;
 
         display: flex;
         justify-content: center;
@@ -20,6 +20,9 @@
 
         @media(min-width: 768px) {
             inset: auto 2rem 5rem 2rem;
+            & > div {
+                max-width: 32rem;
+            }
         }
     }
 
