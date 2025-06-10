@@ -14,7 +14,7 @@ export interface CountriesLayer {
     }>
 }
 
-export const useLayersStore = create<LayersState>((set) => ({
+export const useLayers = create<LayersState>((set) => ({
     layers: [],
     fetchLayers: async () => {
         const world = await fetchWorld()

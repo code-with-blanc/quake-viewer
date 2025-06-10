@@ -1,20 +1,19 @@
 import { useEffect } from "react"
 
-import { useLayersStore } from "./store/layers/layers"
 import { Page } from "./page/page"
 
 import "./tailwind.css"
 import "./App.scss"
+import { useQuakes } from "./store/quakes/quakes"
+import { useLayers } from "./store/layers/layers"
 
 function App() {
-    document.documentElement.classList.add('dark')
-
-    const { fetchLayers } = useLayersStore()
-
     useEffect(() => {
-        fetchLayers()
-    }, [fetchLayers])
-    
+        useLayers.getState().fetchLayers()
+        useQuakes.getState().fetchInitialQuakes()
+    }, [])
+
+    document.documentElement.classList.add('dark')
     return (
         <Page />
     )

@@ -2,17 +2,16 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { coordsToCartesian } from "../utils";
 import { invalidate, useFrame } from "@react-three/fiber";
-import { useQuakesStore } from "../../store/quakes/quakes";
-import { useTimelineStore } from "../../store/timeline/timeline";
+import { useQuakes } from "../../store/quakes/quakes";
 import { MAX_DATE, QUAKE_LAYER_DEPTH, QUAKE_MAX_DEPTH_KM, WORLD_RADIUS } from "../constants";
 import { createQuakesMaterial } from "../materials/quakesMaterial";
 
 
 export const Quakes = () => {
-    const { quakes } = useQuakesStore()
-    const { startDate, endDate } = useTimelineStore() 
-    const minTime = startDate.getTime()
-    const maxTime = endDate.getTime()
+    const { quakes, visibleTimeRange } = useQuakes()
+    const minTime = visibleTimeRange.min
+    const maxTime = visibleTimeRange.max
+    
 
     const geometry = useMemo(
         () => createGeometry(quakes),

@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 import { ExternalLink } from 'lucide-react'
-import { useQuakesStore } from "@/store/quakes/quakes";
+import { useQuakes } from "@/store/quakes/quakes";
 
 import "./quakeList.scss";
 
 export const QuakeList = () => {
-    const { quakes, state } = useQuakesStore()
+    const { quakes, state } = useQuakes()
 
     if (state === 'ERROR') {
         return (

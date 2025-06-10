@@ -32,5 +32,4 @@
     "noUncheckedSideEffectImports": true
   },
   "include": ["src"],
-  "exclude": ["_react/src/.store/quakes/quakes.js"]
 }

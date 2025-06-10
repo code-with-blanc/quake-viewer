@@ -1,12 +1,12 @@
 import { useMemo } from "react"
 import * as THREE from 'three'
 
-import { useLayersStore } from "@/store/layers/layers"
+import { useLayers } from "@/store/layers/layers"
 import { coordsToCartesian, geoJsonToPoints } from "../utils"
 import { WORLD_RADIUS } from "../constants"
 
 export function Countries() {
-    const { layers } = useLayersStore()
+    const { layers } = useLayers()
     const world = layers.find(l => l.layerId === 'countries') || { countries: [] }
     const coordinates = geoJsonToPoints(world.countries.map(c => c.geo_shape))
 

@@ -6,6 +6,6 @@ export interface Quake {
     magnitude: number
     place: string
     status: string
-    time: string
+    time: number
     url: string
 }
